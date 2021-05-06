@@ -22,12 +22,12 @@ dev_requires = [
 infra_requires = []
 
 setup(
-	name="propensity_prediction",
+	name="propensity_pipeline",
 	version="0.0.2",
 	author="An La",
 	author_email="an.la@primedata.ai",
-	description="Marketing Algorithm",
-	long_description="We package our brain in this package",
+	description="Pipeline for propensity_prediction",
+	long_description="Pipeline for propensity_prediction with MLFlow",
 	long_description_content_type="text/markdown",
 	url="https://github.com/primedata-ai/ds_experience",
 	packages=find_packages(),
