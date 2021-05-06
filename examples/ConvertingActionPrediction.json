@@ -1,0 +1,16 @@
+{
+"task":"converting_action_prediction", 
+"data_config":{
+	"path": "/src/dataset/2019-Dec.csv", 
+	"cus_id":"user_id",
+	"product_id":"product_id",
+	"session": "user_session",
+	"event": "event_type",
+	"order_actions": [{"source": "view", "des":"cart"},{"source": "cart", "des":"remove_from_cart"},{"source": "cart", "des":"purchase"}],
+	"feature_types":
+		{"event_time": "object",
+		"category_id": "id",
+		"category_code": "id",
+		"brand": "object",
+		"price": "numeric",
+}}}

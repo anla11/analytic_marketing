@@ -1,0 +1,12 @@
+{
+"task":"LTV_prediction", 
+"data_config":{
+	"path": "http://archive.ics.uci.edu/ml/machine-learning-databases/00352/Online%20Retail.xlsx", 
+	"cus_id": "CustomerID",
+	"invoice_date": "InvoiceDate",
+	"invoice_no": "InvoiceNo",
+	"num_units": "Quantity",
+	"unit_price": "UnitPrice",
+	"months_train": 6,
+	"feature_types": []     
+}}
