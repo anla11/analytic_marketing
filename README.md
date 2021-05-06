@@ -25,34 +25,22 @@ Experiences of Data Science Team
 
 ## 2. Tasks
 
-- Pipeline [Demo of Pipeline.ipynb](https://github.com/primedata-ai/ds/blob/pipeline/notebooks/Demo_New_Pipeline.ipynb)
+- Pipeline [Demo of Pipeline.ipynb](notebooks/Demo_New_Pipeline.ipynb)
 
 - Churn Prediction
-[Demo_ChurnPrediction.ipynb](https://github.com/primedata-ai/ds/blob/pipeline/notebooks/Demo_ChurnPrediction_NKI.ipynb)
+[Demo_ChurnPrediction.ipynb](notebooks/Demo_ChurnPrediction_NKI.ipynb)
 
 - Conversion In-Session prediction
-[DemoPackage_ConvertingActionPrediction](https://github.com/primedata-ai/ds/blob/pipeline/notebooks/Demo_Conversion_InSession_Prediction.ipynb)
+[DemoPackage_ConvertingActionPrediction](notebooks/Demo_Conversion_InSession_Prediction.ipynb)
 
 - LTV Prediction
-[DemoPackage_LTV_Prediction](https://github.com/primedata-ai/ds/blob/pipeline/notebooks/Demo_LTV_Prediction.ipynb)
+[DemoPackage_LTV_Prediction](notebooks/Demo_LTV_Prediction.ipynb)
 
 ## 3. AutoTune
 
-[AutoTune_ChurnPrediction.ipynb](https://github.com/primedata-ai/ds/blob/pipeline/notebooks/AutoTune_ChurnPrediction_pipeline.ipynb)
+[AutoTune_ChurnPrediction.ipynb](notebooks/AutoTune_ChurnPrediction_pipeline.ipynb)
 
-## 4. Develop
-
-Update order of branches:
-
-```
-	model ──────────────────────────────────────────────────────── propensity_prediction   
-	  └─────────── <a_task_branch, e.g. churn_prediction> ──────────────────┘
-	  └─────────── <a_task_branch, e.g. ltv_prediction> ────────────────────┘
-	  
-
-```
-
-## 5. Set-up
+## 4. Set-up
 
 ### Requirements
 > python 3.7+
