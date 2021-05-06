@@ -25,8 +25,6 @@ Experiences of Data Science Team
 
 ## 2. Tasks
 
-- Pipeline [Demo of Pipeline.ipynb](notebooks/Demo_New_Pipeline.ipynb)
-
 - Churn Prediction
 [Demo_ChurnPrediction.ipynb](notebooks/Demo_ChurnPrediction_NKI.ipynb)
 
