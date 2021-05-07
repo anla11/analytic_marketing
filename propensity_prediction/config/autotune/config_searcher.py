@@ -84,10 +84,10 @@ class ConfigTuner:
 		return {}
 
 class ConfigParser:
-	def __init__(self, run_epochs = 500):
+	def __init__(self, running_config = {'epochs': 500}):
 		self.key_list = None
 		self.config = None
-		self.run_epochs = run_epochs
+		self.running_config = running_config
 
 	def _parse(self, key):
 		value = self.config[key]
@@ -98,7 +98,7 @@ class ConfigParser:
 			for method in value['method']:
 				sub_config = {'method': method, 'para': value['para'][method]}
 				if (key == 'model_config'):
-					sub_config['para'].update({'epochs': self.run_epochs})
+					sub_config['para'].update(self.running_config)
 				config[key].append(sub_config)
 			return config
 		return None
@@ -113,11 +113,11 @@ class ConfigParser:
 
 
 class ConfigSearcher:
-	def __init__(self, task_package, pipeline_config, run_epochs = 500):
+	def __init__(self, task_package, pipeline_config, running_config = {'epochs': 500}):
 		self.list_results = []
 		self.best_result, self.best_config = None, None #lower is better
 		self.tuner = ConfigTuner()
-		self.parser = ConfigParser(run_epochs)
+		self.parser = ConfigParser(running_config)
 		self.task_package = task_package
 		self.study = optuna.create_study()  # Create a new study.
 		self.pipeline_config = pipeline_config

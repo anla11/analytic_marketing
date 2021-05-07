@@ -4,7 +4,7 @@ from propensity_prediction.config.autotune.tasks import get_task_package, get_pi
 def run(global_config, n_trials = 20):
 	task_package = get_task_package(global_config)
 	pipeline_space = get_pipeline_space(global_config)
-	searcher = ConfigSearcher(task_package, pipeline_space, run_epochs=500)
+	searcher = ConfigSearcher(task_package, pipeline_space, running_config = {'epochs': 500})
 	searcher.search(n_trials = n_trials)
 	print ('The best result: ', searcher.best_result)
 
