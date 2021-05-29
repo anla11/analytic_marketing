@@ -16,6 +16,7 @@ class Base_TaskConfig(Abstract_TaskConfig):
 	def update_metadata(self, new_metadata):
 		self.data_config.update_metadata(new_metadata)	
 
+
 class Base_ModelConfig(Abstract_ModelConfig):
 	def get_model_config(self):
 		return self.__dict__
@@ -53,27 +54,19 @@ class Base_ModelConfig(Abstract_ModelConfig):
 		self._update_config(pipeline_config)
 		self.in_dim, self.out_dim = None, None	
 
+
 class Base_DataConfig(Abstract_DataConfig):
-	def __init__(self, user_profile=None, product_profile=None, history=None, session=None, constraint_config = None):
+	def __init__(self, user_profile=None, product_profile=None, history=None, session=None, constraint_config=None):
 		self.user_profile = user_profile
 		self.product_profile = product_profile
 		self.history = history
 		self.session = session
-		self.data_path = None
+		self.data_path = None #update later
 
 		if (constraint_config is None) == False:
 			self.constraint = CONSTRAINT()
 			self.constraint.update_config(constraint_config)
 			self.constraint.constraint_key = self.get_column_names(self.constraint.constraint_field)		
-
-	def get_datapath(self):
-		return self.data_path
-
-	def get_column_names(self, key):
-		for obj in [self.user_profile, self.product_profile, self.history, self.session]:
-			if (obj is None) == False:
-				if key in obj.get_attributes():
-					return obj.get_columns(key)	
 
 	def parse_data_config(self):
 		keys_types, feature_types = {}, {}
@@ -83,12 +76,21 @@ class Base_DataConfig(Abstract_DataConfig):
 				feature_types.update(obj.get_features())
 		return keys_types, feature_types
 
+	def get_column_names(self, key):
+		for obj in [self.user_profile, self.product_profile, self.history, self.session]:
+			if (obj is None) == False:
+				if key in obj.get_attributes():
+					return obj.get_columns(key)	
+
 	def get_keys(self):
 		keys_types = {}
 		for obj in [self.user_profile, self.product_profile, self.history, self.session]:
 			if (obj is None) == False:
 				keys_types.update(obj.get_keys())
 		return keys_types		
+
+	def get_datapath(self):
+		return self.data_path
 
 	def get_constraint(self):
 		return self.constraint
@@ -106,8 +108,9 @@ class HistoryBased_DataConfig(Base_DataConfig):
 		if 'path' in  data_config.keys():
 			self.data_path = data_config['path']
 
-	def update_metadata(self, new_metadata):			
+	def update_metadata(self, new_metadata):
 		self.history.metadata = new_metadata
+
 
 class SessionBased_DataConfig(Base_DataConfig):	
 	def __init__(self, data_config):

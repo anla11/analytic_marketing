@@ -8,9 +8,11 @@ class Abstract_ModelConfig():
 class Abstract_DataConfig():
 	def __init__(self):
 		self	
-	def get_column_names(self, key):
-		raise NotImplementedError()  
 	def parse_data_config(self):
+		raise NotImplementedError()  
+	def get_datapath(self):
+		raise NotImplementedError()
+	def get_column_names(self, key):
 		raise NotImplementedError()  
 	def get_keys(self):
 		raise NotImplementedError()  

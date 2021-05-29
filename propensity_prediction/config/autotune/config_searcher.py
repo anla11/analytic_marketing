@@ -85,14 +85,15 @@ class ConfigTuner:
 
 class ConfigParser:
 	def __init__(self, running_config = {'epochs': 500}):
-		self.key_list = None
-		self.config = None
 		self.running_config = running_config
 
-	def _parse(self, key):
-		value = self.config[key]
+	def _parse(self, config, key):    
+		value = config[key]
+		if len(value.keys())== 0 or list(value.keys())[0] != 'method':
+			return value
+			
 		if type(value['method']) != list:
-			return {key: {'method': value['method'], 'para': value['para'][value['method']]}}
+			return {key: {'method': value['method'], 'para': self._parse(value['para'], value['method'])}}
 		elif type(value['method']) == list:
 			config = {key: []}
 			for method in value['method']:
@@ -104,11 +105,11 @@ class ConfigParser:
 		return None
 	
 	def parse(self, best_pipeline_config):
-		self.key_list = best_pipeline_config['method']
-		self.config = best_pipeline_config['para']   
+		key_list = best_pipeline_config['method']
+		config = best_pipeline_config['para']   
 		pipeline_config = {}
-		for key in self.key_list:
-			pipeline_config.update(self._parse(key))
+		for key in key_list:
+			pipeline_config.update(self._parse(config, key))
 		return pipeline_config
 
 
