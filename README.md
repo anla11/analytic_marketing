@@ -1,11 +1,27 @@
-# Pipeline for propensity_prediction
+# Pipeline for analtyic marketing tasks
+
+In online websites or e-commerce services, the activities of users are informative to gain insights about how to improve marketing profits. They are extracted and organized as features of user behaviours. Then they are used to predict propensity values, which reflect user tendencies. Furthermore, values of users are evaluated (e.g. VIP, premium, potential) in terms of marketing profits (KPIs), and these features are useful inputs to discover underlying user-behaviour patterns that impact user values.
+
+Main components of this project:
+- A standard Machine Learning pipeline: data preprocessing, feature engineering, modeling, and evaluating. Extracting features for Automatic EDA ([Exploratory Data Analysis](https://en.wikipedia.org/wiki/Exploratory_data_analysis)) are included.
+- Predicting propensity values (churn rate, conversion rate, lifetime value).
+- Generating KPI segments of users (total money, number of products), which serves to discover user-behaviour patterns in favour of KPIs. In particular,  a KPI segment is a group of users such that: 
+	- (1) all of its users have relatively the same behaviours and KPI values
+	- (2) the average KPI values are different to other groups.
+
+Automatically tuning parameters is included in this project.
+
 
 ## 1. Overview
-Experiences of Data Science Team
 
 ```
 ├── README.md                      <- The top-level README for developers using this project.
-├── propensity_prediction          <- Propensity package: data preprocessing, feature engineering, modeling, evaluating
+│
+├── model			   <- ML Standard pipeline: data preprocessing, feature engineering, modeling, evaluating
+│
+├── propensity_prediction          <- Package for predicting tasks 
+│
+├── segment			   <- Package for automatically generating segments 
 │
 ├── notebooks                      <- Jupyter notebooks. Naming convention is a number (for ordering),
 │                                     the creator's initials, and a short `-` delimited description, e.g.
@@ -34,7 +50,10 @@ Experiences of Data Science Team
 - LTV Prediction
 [DemoPackage_LTV_Prediction](notebooks/Demo_LTV_Prediction.ipynb)
 
-## 3. AutoTune
+- Segment
+[notebooks/Segment Demo.ipynb](notebooks/Segment%20Demo.ipynb)
+
+## 3. AutoTune for propensity prediction
 
 [AutoTune_ChurnPrediction.ipynb](notebooks/AutoTune_ChurnPrediction_pipeline.ipynb)
 
