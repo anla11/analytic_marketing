@@ -1,19 +1,19 @@
 # Pipeline for analtyic marketing tasks
 
-In online websites or e-commerce services, the activities of users are informative to gain insights about how to improve marketing profits. They are extracted and organized as features of user behaviours. Then they are used to predict propensity values, which reflect user tendencies. Furthermore, values of users are evaluated (e.g. VIP, premium, potential) in terms of marketing profits (KPIs), and these features are useful inputs to discover underlying user-behaviour patterns that impact user values.
+In online websites or e-commerce services, the activities of users are informative to gain insights about how to improve marketing profits. They are extracted and organized as features of user behaviours. Then they are used to predict propensity values, which reflect user tendencies. Furthermore, values of users are evaluated (e.g. VIP, premium, potential) in terms of marketing profits (KPIs), and these features are useful inputs to discover underlying user-behaviour patterns that impact user values. These interesting ideas are widely applied nowaday, also introduced in the book [Introduction to Algorithmic Marketing](https://www.algorithmicmarketingbook.com). 
 
-Main components of this project:
-- A standard Machine Learning pipeline: data preprocessing, feature engineering, modeling, and evaluating. Extracting features for Automatic EDA ([Exploratory Data Analysis](https://en.wikipedia.org/wiki/Exploratory_data_analysis)) are included.
-- Predicting propensity values (churn rate, conversion rate, lifetime value).
-- Generating KPI segments of users (total money, number of products), which serves to discover user-behaviour patterns in favour of KPIs. In particular,  a KPI segment is a group of users such that: 
+However, [Exploratory Data Analysis](https://en.wikipedia.org/wiki/Exploratory_data_analysis) requires many manual efforts of data analysts. Moreover, to find underlying patterns, current methods of Segment Analytics, such as clustering, are insufficiently supervised by expert knowledge. For examples, Marketing experts know that VIP users and normal users have differences in some behaviors, and we wish to obtain groups of users implying that insight. But traditional clustering methods barely return desired results, require careful discovery by experts, analysts, and deployers.
+
+This project proposes a framework to solve 2 difficult problems in Algorithmic Marketing: 
+- Automating [Exploratory Data Analysis](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
+- Automating Segment Analytics: Generating segments of users (called clusters in Computer Science) in favour of KPIs (total money, number of products). Segments of users serve to discover user-behaviour patterns related to KPIs tendencies. In particular, a segment is a group of users such that: 
 	- (1) all of its users have relatively the same behaviours and KPI values
 	- (2) the average KPI values are different to other groups.
+In addition, predicting propensity values (churn rate, conversion rate, lifetime value) are included.
 
-Automatically tuning parameters is included in this project.
-
+The project is deployed as a standard Machine Learning pipeline: data preprocessing, feature engineering, modeling, and evaluating. Automatic EDA has not been fully developed, but its basic ideas is provided in [model/analytics](model/analytics). 
+Automatically tuning parameters is included in this project. 
 For more details of data format and pipeline usage, see [examples](examples) and [notebooks](notebooks).
-
-
 
 ## 1. Overview
 
