@@ -11,6 +11,9 @@ Main components of this project:
 
 Automatically tuning parameters is included in this project.
 
+For more details of data format and pipeline usage, see [examples](examples) and [notebooks](notebooks).
+
+
 
 ## 1. Overview
 
