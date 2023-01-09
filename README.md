@@ -4,7 +4,7 @@ In online websites or e-commerce services, the activities of users are informati
 
 However, [Exploratory Data Analysis](https://en.wikipedia.org/wiki/Exploratory_data_analysis) requires many manual efforts of data analysts. Moreover, to find underlying patterns, current methods of Segment Analytics, such as clustering, are insufficiently supervised by expert knowledge. For examples, Marketing experts know that VIP users and normal users have differences in some behaviors, and we wish to obtain groups of users implying that insight. But traditional clustering methods barely return desired results, require careful discovery by experts, analysts, and deployers.
 
-This project proposes a framework to solve 2 difficult problems in Algorithmic Marketing: 
+This project proposes a framework to show that these 2 difficult problems of Algorithmic Marketing are possible to solve. It provides demonstrations of: 
 - Automating [Exploratory Data Analysis](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
 - Automating Segment Analytics: Generating segments of users (called clusters in Computer Science) in favour of KPIs (total money, number of products). Segments of users serve to discover user-behaviour patterns related to KPIs tendencies. In particular, a segment is a group of users such that: 
 	- (1) all of its users have relatively the same behaviours and KPI values
